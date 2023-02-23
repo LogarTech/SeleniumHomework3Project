@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class TestUiPractice extends TestBaseUi {
 
     @Test
-    public void validateStudentInfo() throws InterruptedException {
+    public void validateStudentInfo()  {
 
         MainPage mainPage = new MainPage(driver);
         mainPage.clickCreateButton(driver);
@@ -33,14 +33,14 @@ public class TestUiPractice extends TestBaseUi {
     }
 
     @Test
-    public void validateDelete() throws InterruptedException {
+    public void validateDelete() {
         MainPage mainPage = new MainPage(driver);
         mainPage.searchNames("Bardiur");
         SearchPage searchPage = new SearchPage(driver);
         searchPage.clickDelete();
         DeletePage deletePage = new DeletePage(driver);
         deletePage.deleteName();
-        Thread.sleep(3000);
+
         mainPage.searchNames("Bardiur");
         searchPage.validateNoStudent("\n" +
                 "There are zero students with this search text\n" +
